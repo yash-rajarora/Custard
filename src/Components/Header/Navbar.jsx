@@ -1,41 +1,3 @@
-// import React from 'react';
-// import { Box, Flex, Link, Text } from '@chakra-ui/react';
-
-// const Navbar = () => {
-//   return (
-//     <Flex
-//       as="nav"
-//       align="center"
-//       justify="space-between"
-//       padding="1rem"
-//       bgColor="red.400"
-//       color="white"
-//     >
-//       <Box>
-//         <Text fontSize="xl" fontWeight="bold">
-//           Your Logo
-//         </Text>
-//       </Box>
-
-//       <Box>
-//         <Link mx={2} href="#">
-//           Home
-//         </Link>
-//         <Link mx={2} href="#">
-//           About
-//         </Link>
-//         <Link mx={2} href="#">
-//           Services
-//         </Link>
-//         <Link mx={2} href="#">
-//           Contact
-//         </Link>
-//       </Box>
-//     </Flex>
-//   );
-// };
-
-// export default Navbar;
 import {
   Box,
   Flex,
@@ -187,13 +149,13 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display="block"
       p={2}
       rounded="md"
-      _hover={{ bg: 'pink.50' /* Add your color values here */ }}>
+      _hover={{ bg: 'red.50' /* Add your color values here */ }}>
       <Flex direction="row" align="center">
         <Box>
           <Text
             transition="all .3s ease"
             fontWeight={500}
-            _groupHover={{ color: 'pink.400' /* Add your color value here */ }}>
+            _groupHover={{ color: 'red.400' /* Add your color value here */ }}>
             {label}
           </Text>
           <Text fontSize="sm">{subLabel}</Text>
@@ -206,7 +168,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           justify="flex-end"
           align="center"
           flex={1}>
-          <Icon color="pink.400" w={5} h={5} as={ChevronRightIcon} />
+          <Icon color="red.400" w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Flex>
     </Box>
