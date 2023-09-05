@@ -21,6 +21,9 @@ import {
   ChevronRightIcon,
 } from '@chakra-ui/icons'
 import React from 'react'
+import Signup from '../Signup/Signup'
+import { Link } from 'react-router-dom';
+
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure()
@@ -66,9 +69,12 @@ export default function WithSubnavigation() {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-          <Button as={'a'} fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'}>
+          <Link to={'Signin'}>
+          <Button fontSize={'sm'} fontWeight={400} variant={'link'} href={'#'} pt={3}>
             Sign In
           </Button>
+          </Link>
+          <Link to={'/Signup'}>
           <Button
             as={'a'}
             display={{ base: 'none', md: 'inline-flex' }}
@@ -76,12 +82,15 @@ export default function WithSubnavigation() {
             fontWeight={600}
             color={'white'}
             bg={'red.400'}
-            href={'#'}
+            href={"#"}
             _hover={{
               bg: 'red.400',
-            }}>
+            }}
+            >
             Sign Up
           </Button>
+          </Link>
+          
         </Stack>
       </Flex>
 
@@ -149,13 +158,13 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
       display="block"
       p={2}
       rounded="md"
-      _hover={{ bg: 'red.50' /* Add your color values here */ }}>
+      _hover={{ bg: 'pink.50' /* Add your color values here */ }}>
       <Flex direction="row" align="center">
         <Box>
           <Text
             transition="all .3s ease"
             fontWeight={500}
-            _groupHover={{ color: 'red.400' /* Add your color value here */ }}>
+            _groupHover={{ color: 'pink.400' /* Add your color value here */ }}>
             {label}
           </Text>
           <Text fontSize="sm">{subLabel}</Text>
@@ -168,7 +177,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           justify="flex-end"
           align="center"
           flex={1}>
-          <Icon color="red.400" w={5} h={5} as={ChevronRightIcon} />
+          <Icon color="pink.400" w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Flex>
     </Box>
