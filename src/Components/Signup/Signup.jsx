@@ -26,21 +26,21 @@ export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState(''); 
   const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Move it here
 
-  const SignUp_fun = (e) =>{
-    const navigate = useNavigate();
+  const SignUp_fun = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth ,email,password)
-    .then((userCredential)=> {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
         console.log(userCredential);
         if (userCredential.user) {
-            navigate('/Signin'); // Replace '/homepage' with the actual URL of your homepage route
-          }
-        })
-        .catch((error) => {
-          console.error(error);
-          // Handle login failure here if needed
-        });
+          navigate('/Signin');
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        // Handle login failure here if needed
+      });
   };
 
   return (
